@@ -13,4 +13,7 @@ cmake ..
 make
 ```
 ## Running
-Run the resulting executable: ./garbage_collector 
+Run the resulting executable:
+```
+./garbage_collector
+```
