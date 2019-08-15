@@ -180,6 +180,22 @@ T *Pointer<T, size>::operator=(T *t){
 
     // TODO: Implement operator==
     // LAB: Smart Pointer Project Lab
+    typename std::list<PtrDetails<T> >::iterator p = findPtrInfo(addr);
+    p->refcount--;
+    if(p->refcount == 0)collect();
+    p = findPtrInfo(t);
+    if(p == refContainer.end()){
+        PtrDetails<T> newPtr(t, size);
+        refContainer.push_back(newPtr);
+    }else{
+        p->refcount++;
+    }
+    if(size > 0){
+        isArray = true;
+        arraySize = size;
+    }
+    this->addr = t;
+    return addr;
 
 }
 // Overload assignment of Pointer to Pointer.
