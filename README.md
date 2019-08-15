@@ -1,5 +1,5 @@
 # CppND-Garbage-Collector
-The final project is to implement my own version of a smart pointer. 
+The project is to implement my own version of a smart pointer.
 
 
 ## Compiling
